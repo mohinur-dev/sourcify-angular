@@ -1,0 +1,127 @@
+<body>
+  <div class="invoice  form-control">
+    <div class="header">
+      <img src="../../../../assets/main/logo-name.png" alt="Your Company Logo">
+      <h3>Sourcify Bangladesh Ltd.</h3>
+      <div class="row">
+        <div class="col-4"><h6 class="text-start">OrderDate :{{oDate}}</h6></div>
+        <div class="col-4"><h4 class="text-center">Invoice#</h4></div>
+        <div class="col-4"><h6 class="text-end">Dalevary Date:{{delDate}}</h6></div>
+      </div>
+      <hr>
+    </div>
+    <table class="invoice-table ">
+      <thead>
+        <tr>
+          <td>Manufacturer Details</td>
+          <!-- <td>Order Details</td> -->
+          <td>Dalevared To</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>ID : {{manufecturerInfo.manuId}}</p>
+            <p>Name : {{manufecturerInfo.manuName}}</p>
+            <p>Email : {{manufecturerInfo.email}}</p>
+            <p>Phone : {{manufecturerInfo.repPhone}}</p>
+            <p>Corporate Office :</p>
+            <span>{{manufecturerInfo.coLocation}}, </span>
+            <span>{{manufecturerInfo.coUpozla}}, </span>
+            <span>{{manufecturerInfo.coDistrict}}, </span>
+            <span>{{manufecturerInfo.coDivision}}</span>
+          </td>
+          <!-- <td>
+            <p>Order Status: {{status}}</p>
+            <p>Order No: {{oId}}</p>
+            <p>Order Date: </p>
+            <p>Dalevary Date :</p>
+            <p>Payment Methode :CoD</p>
+          </td> -->
+          <td>
+            <p>ID : {{retailerInfo.id}}</p>
+            <p>Name : {{retailerInfo.name}}</p>
+            <p>Email : {{retailerInfo.email}}</p>
+            <p>Phone : {{retailerInfo.phone}}</p>
+            <p>Address :</p>
+            <span>{{delLocation}}, </span>
+            <span>{{delUpozela}}, </span>
+            <span>{{delDevision}}, </span>
+            <span>{{delDistrict}}</span>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>Serial</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let invItem of orderItemsInfo.orderItems; let i = index">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{invItem.pName}}</td>
+          <td>{{invItem.pQuantity}}</td>
+          <td>{{invItem.uPrice}}</td>
+          <td>{{invItem.price}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Subtotal</td>
+          <td>{{orderItemsInfo.subtotal}}</td>
+        </tr>
+        <tr>
+          <td colspan="4">Discount</td>
+          <td>{{orderItemsInfo.discount}}</td>
+        </tr>
+        <tr>
+          <td colspan="4">VAT (15%)</td>
+          <td>{{orderItemsInfo.vat}}</td>
+        </tr>
+        <tr>
+          <td colspan="4">Net Payable</td>
+          <td>{{orderItemsInfo.netPayable}}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="footer">
+      <div class="row mt-5">
+        <div class="col">
+          <div class="row mt-5">
+            <div class="col">
+              <hr>
+              <h6>Sells Manager</h6>
+            </div>
+            <div class="col">
+              <hr>
+              <h6>Received By</h6>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="row mt-5">
+            <div class="col">
+              <hr>
+              <h6>Dalevared By</h6>
+            </div>
+            <div class="col">
+              <hr>
+              <h6>IT Manager</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 text-center">
+        <p>Thank you for your business!</p>
+      </div>
+    </div>
+  </div>
+</body>

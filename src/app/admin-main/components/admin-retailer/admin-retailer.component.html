@@ -1,0 +1,35 @@
+<div class="d-flex flex-column flex-shrink-0 p-3">
+    <div class="text-end">
+        <label class="form-lebel">Filter : </label>
+        <select class="from-control" [(ngModel)]="selected" (change)="onChange()">
+            <option value="Active">Active</option>
+            <option value="Deactive">Deactive</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sl.No.</th>
+                <th>ID</th>
+                <th>ShopName</th>
+                <th>BusinessType</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let r of retailerInfo; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.businessType}}</td>
+                <td>{{r.status}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="updateRetailerPage(r.id)">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

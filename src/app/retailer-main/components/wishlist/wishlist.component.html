@@ -1,0 +1,42 @@
+<div>
+    <table class="table table-stripted">
+        <thead>
+            <tr>
+                <th>Sl.No.</th>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Picture</th>
+                <th>Manufacturar name</th>
+                <th>Unit Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let wl of wishList; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{wl.pId}}</td>
+                <td>{{wl.pName}}</td>
+                <td><img src="{{'../../../../../../assets/manufecturear/'+wl.pPicture}}" style="width: 50px;"></td>
+                <td>{{wl.manuName}}</td>
+                <td>{{wl.uPrice}}</td>
+                <td>
+                    <div class="btn-group">
+                        
+                        <!-- view details -->
+                        <button class="btn btn-outline-info" style="width: 45px;" (click)="showDetailsPage(wl.pId)">
+                            <i class="fa-sharp fa-solid fa-eye"></i></button>
+                        
+                            <!-- add to card  -->
+                        <button class="btn btn-outline-success" style="width: 45px;" (click)="add2cart(wl)">
+                            <i class="fa-sharp fa-solid fa-cart-plus"></i></button>
+                        
+                            <!-- delete from cart -->
+                        <button class="btn btn-outline-danger" style="width: 45px;"
+                            (click)="deleteFromWishlist(wl)">
+                            <i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

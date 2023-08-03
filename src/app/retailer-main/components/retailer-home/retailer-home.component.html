@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row p-5">
+        <div *ngFor="let pdt of products" class="col-md-4">
+            <div class="card shadow-lg mb-3">
+                <img src="{{'../assets/manufecturear/'+ pdt.pPicture}}" width="200px" height="175px"
+                    class="card-img-top p-3" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{pdt.pName}}</h5>
+                    <hr>
+                    <table class="table table-borderd table-hover">
+                        <tbody>
+                            <tr>
+                                <td scope="col">{{pdt.manuName}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Stock</th>
+                                <td scope="col">{{pdt.pStock}}</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>{{pdt.uPrice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn-group  text-center">
+                        <button class="btn btn-outline-info" (click)=" add2Wishlist(pdt)">
+                            <i class="fa-sharp fa-solid fa-heart"></i></button>
+                        <button class="btn btn-outline-info" (click)="showDetailsPage(pdt.pId)">
+                            View</button> <!--  <i class="fa-sharp fa-solid fa-eye"></i> -->
+                        <button class="btn btn-outline-info" (click)="add2cart(pdt)">
+                            <i class="fa-sharp fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

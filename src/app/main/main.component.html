@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <form class="form-control bg-light">
+        <div class="form-control mb-1">
+            <app-main-header></app-main-header>
+        </div>
+        <div class="form-control" style="min-height:500px;">
+            <router-outlet></router-outlet>
+            <ng-toast></ng-toast>
+        </div>
+        <div class="form-control mt-1">
+            <app-main-footer></app-main-footer>
+        </div>
+    </form>
+</div>

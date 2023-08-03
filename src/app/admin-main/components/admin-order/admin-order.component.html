@@ -1,0 +1,38 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 mt-3">
+    <div>
+
+    </div>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Sl.No.</th>
+                <th>Order No</th>
+                <th>Order Date</th>
+                <th>Order To</th>
+                <th>Order From</th>
+                <th>Order Amount</th>
+                <th>Dalevary Date</th>
+                <th>Order Status</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let o of orderList; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{o.oId}}</td>
+                <td>{{o.oDate}}</td>
+                <td>{{o.retId}}</td>
+                <td>{{o.manuId}}</td>
+                <td>{{o.netPayable}}</td>
+                <td>{{o.delDate}}</td>
+                <td>{{o.status}}</td>
+                <td>
+                    <button class="btn btn-primary">View</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+
+</div>

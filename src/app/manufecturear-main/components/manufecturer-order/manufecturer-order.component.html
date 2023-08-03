@@ -1,0 +1,25 @@
+<table class="table table-stripted">
+    <thead>
+        <tr>
+            <th>Sl.No.</th>
+            <th>Order Number</th>
+            <th>Name</th>
+            <th>Order Amouny</th>
+            <th>Order Status</th>
+            <th>View Details</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let odr of orderList; let i = index">
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{odr.oId}}</td>
+            <td>{{odr.retId}}</td>
+            <td>{{odr.netPayable}}</td>
+            <td>{{odr.status}}</td>
+            <td>
+                <button class="btn btn-primary">View Details</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot></tfoot>
+</table>

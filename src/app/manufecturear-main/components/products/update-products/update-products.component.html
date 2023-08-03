@@ -1,0 +1,53 @@
+<div>
+    <form class=" form-control p-5">
+        <div>
+            <h3 class="text-center p-2">Update Product Informations</h3>
+            <hr>
+        </div>
+        <div>
+            <label for="menufecturear-id" class="lebel-control">Manufecturear Id</label>
+            <input class="form-control" id="menuId" name="menuId" 
+            [(ngModel)]="product.manuId">
+        </div>
+        <div>
+            <label for="product-id" class="lebel-control">Product Id</label>
+            <input class="form-control" id="pId" name="pId" 
+            [(ngModel)]="product.pId">
+        </div>
+        <div>
+            <label for="product-name" class="lebel-control">Product Name</label>
+            <input class="form-control" id="pName" name="pName" 
+            [(ngModel)]="product.pName">
+        </div>
+        <div>
+            <label for="product-generic" class="lebel-control">Product Generic</label>
+            <input class="form-control" id="generic" name="generic" 
+            [(ngModel)]="product.pGeneric">
+        </div>
+        <div>
+            <label for="stock" class="lebel-control">Stock</label>
+            <input class="form-control" id="pStock" name="pStock" 
+            [(ngModel)]="product.pStock">
+        </div>
+        <div>
+            <label for="unit-price" class="lebel-control">Price per unit</label>
+            <input class="form-control" id="uPrice" name="uPrice" 
+            [(ngModel)]="product.uPrice">
+        </div>
+        <div>
+            <label for="product-picture" class="lebel-control">Product Picture</label>
+            <input class="form-control" id="pPicture" name="pPicture" 
+            [(ngModel)]="product.pPicture">
+        </div>
+        <div>
+            <label for="product-description" class="lebel-control">Product Description</label>
+            <textarea class="form-control" id="pDescription" name="pDescription" 
+            [(ngModel)]="product.pDescription"></textarea>
+        </div>
+        <div class="mt-3">
+            <div>
+                <button class="btn btn-success" (click)="productUpdate()" >Update</button>
+            </div>
+        </div>
+    </form>
+</div>

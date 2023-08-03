@@ -1,0 +1,5 @@
+.nav-link:hover,
+.nav-link.active {
+    background-color: #f2f2f2;
+    color: blue; /* Change the font color on hover and for the selected menu item */
+}

@@ -1,0 +1,240 @@
+<div class="container">
+    <form class="p-3 rounded-lg bg">
+        <h1 class="text-center">UpdateManufacturer</h1>
+        <hr>
+
+        <!-- manufecturear details -->
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Manufecturear Profile</legend>
+                <div class="row">
+                    <div class="col-6">
+                        <div>
+                            <label for="manufecturearName" class="form-label">Manufacturer Name</label>
+                            <input class="form-control" type="text" id="manufecturearName" name="manufecturearName"
+                                [(ngModel)]="manufecturear.manuName">
+                        </div>
+                        <div>
+                            <label for="productType" class="form-label">Product Type</label>
+                            <input class="form-control" type="text" id="productType" name="productType"
+                                [(ngModel)]="manufecturear.productType">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="website" class="form-label">Website</label>
+                            <input class="form-control" type="text" id="website" name="website"
+                                [(ngModel)]="manufecturear.website">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control" type="email" id="email" name="email"
+                                [(ngModel)]="manufecturear.email">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- contract parsion details -->
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Contract Parson</legend>
+                <div class="row">
+                    <div class="col-6">
+                        <div>
+                            <label for="repName" class="form-label">Name</label>
+                            <input class="form-control" type="text" id="repName" name="repName"
+                                [(ngModel)]="manufecturear.repName">
+                        </div>
+                        <div>
+                            <label for="repDeg" class="form-label">Degicnation</label>
+                            <input class="form-control" type="text" id="repDeg" name="repDeg"
+                                [(ngModel)]="manufecturear.repDeg">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="repEmail" class="form-label">Email</label>
+                            <input class="form-control" type="Email" id="repEmail" name="repEmail"
+                                [(ngModel)]="manufecturear.repEmail">
+                        </div>
+                        <div>
+                            <label for="repPhone" class="form-label">Phone</label>
+                            <input class="form-control" type="text" id="repPhone" name="repPhone"
+                                [(ngModel)]="manufecturear.repPhone">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- bank Account details -->
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Bank Account Details</legend>
+                <div class="row">
+                    <div class="col-4">
+                        <div>
+                            <label for="bank" class="form-label">Bank</label>
+                            <input class="form-control" type="text" id="bank" name="bank"
+                                [(ngModel)]="manufecturear.bank">
+                        </div>
+                        <div>
+                            <label for="branch" class="form-label">Branch</label>
+                            <input class="form-control" type="text" id="branch" name="branch"
+                                [(ngModel)]="manufecturear.branch">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            <label for="accName" class="form-label">Account Name</label>
+                            <input class="form-control" type="text" id="accName" name="accName"
+                                [(ngModel)]="manufecturear.accName">
+                        </div>
+                        <div>
+                            <label for="accType" class="form-label">Account Type</label>
+                            <input class="form-control" type="text" id="accType" name="accType"
+                                [(ngModel)]="manufecturear.accType">
+                        </div>
+                    </div>
+                    <div class="col-4">
+
+                        <div>
+                            <label for="accNumber" class="form-label">Account Number</label>
+                            <input class="form-control" type="text" id="accNumber" name="accNumber"
+                                [(ngModel)]="manufecturear.accNumber">
+                        </div>
+                        <div>
+                            <label for="accRoutingNumber" class="form-label">Rauting Number</label>
+                            <input class="form-control" type="text" id="accRoutingNumber" name="accRoutingNumber"
+                                [(ngModel)]="manufecturear.accRoutingNum">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- address -->
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <div class="row">
+                <div class="col-6">
+                    <fieldset>
+                        <legend>Corporate Office</legend>
+                        <div class="row">
+                            <div class="col-6">
+                                <div>
+                                    <label for="coDivison" class="form-label">Divison</label>
+                                    <input class="form-control" type="text" id="coDivison" name="coDivison"
+                                        [(ngModel)]="manufecturear.coDivision">
+                                </div>
+                                <div>
+                                    <label for="coDistrict" class="form-label">District</label>
+                                    <input class="form-control" type="text" id="coDistrict" name="coDistrict"
+                                        [(ngModel)]="manufecturear.coDistrict">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div>
+                                    <label for="coUpozila" class="form-label">Upozila</label>
+                                    <input class="form-control" type="text" id="coUpozila" name="coUpozila"
+                                        [(ngModel)]="manufecturear.coUpozla">
+                                </div>
+                                <div>
+                                    <label for="coUpozila" class="form-label">Location</label>
+                                    <input class="form-control" type="text" id="coUpozila" name="coUpozila"
+                                        [(ngModel)]="manufecturear.coLocation">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- factory address -->
+                <div class="col-6">
+                    <fieldset>
+                        <legend>Factory Address</legend>
+                        <div class="row">
+                            <div class="col-6">
+                                <div>
+                                    <label for="fctDivison" class="form-label">Divison</label>
+                                    <input class="form-control" type="text" id="fctDivison" name="fctDivison"
+                                        [(ngModel)]="manufecturear.facDivision">
+                                </div>
+                                <div>
+                                    <label for="fctDistrict" class="form-label">District</label>
+                                    <input class="form-control" type="text" id="fctDistrict" name="fctDistrict"
+                                        [(ngModel)]="manufecturear.facDictrict">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div>
+                                    <label for="fctUpozila" class="form-label">Upozila</label>
+                                    <input class="form-control" type="text" id="fctUpozila" name="fctUpozila"
+                                        [(ngModel)]="manufecturear.facUpozela">
+                                </div>
+                                <div>
+                                    <label for="fctLocation" class="form-label">Location</label>
+                                    <input class="form-control" type="text" id="fctLocation" name="fctLocation"
+                                        [(ngModel)]="manufecturear.facLocation">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Corporate Office</legend>
+                <div class="row">
+                    <div class="col-6">
+                        <div>
+                            <label for="fctUpozila" class="form-label">Logo</label>
+                            <input class="form-control" type="text" id="fctUpozila" name="fctUpozila"
+                                [(ngModel)]="manufecturear.manuPicture">
+                        </div>
+                        <div>
+                            <label for="fctUpozila" class="form-label">Username</label>
+                            <input class="form-control" type="text" id="fctUpozila" name="fctUpozila"
+                                [(ngModel)]="manufecturear.username">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="password" class="form-label">Password</label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                [(ngModel)]="manufecturear.password">
+                        </div>
+                        <div>
+                            <label for="rePassword" class="form-label">Re-write Password</label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                [(ngModel)]="manufecturear.password">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <!-- manuId  -->
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <div class="">
+                <Label for="comments" class="form-label">Notes</Label>
+                <textarea class="form-control" id="comments" name="comments"
+                    [(ngModel)]="manufecturear.comments"></textarea>
+            </div>
+            <div class="mb-2">
+                <label class="form-check-label" for="manufecturear-status">Status</label>
+                <select class="form-select" id="status" name="status" [(ngModel)]="manufecturear.status">
+                    <option class="" value="Active">Active</option>
+                    <option class="" value="Pending">Pending</option>
+                    <option class="" value="Deactive">Deactive</option>
+                </select>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-outline-success w-100" (click)="updateManufecturearInformation(manufecturear)">Update</button>
+            </div>
+        </div>
+    </form>
+</div>

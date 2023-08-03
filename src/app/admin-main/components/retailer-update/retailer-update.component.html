@@ -1,0 +1,163 @@
+<div class="container-fluid">
+    <form class="p-3 rounded-lg">
+        <h1 class="text-center">Update Retailer Information</h1>
+        <hr>
+
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Retailer Profile</legend>
+                <div class="row">
+                    <div class="col-6">
+                        <div>
+                            <label for="name" class="form-label">Retail Store Name</label>
+                            <input class="form-control" type="text" id="name" name="name" [(ngModel)]="retailer.name">
+                        </div>
+                        <div>
+                            <label for="catagory" class="form-label">Catagory</label>
+                            <input class="form-control" type="text" id="catagory" name="catagory"
+                                [(ngModel)]="retailer.catagory">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="businessType" class="form-label">Business Type</label>
+                            <input class="form-control" type="text" id="businessType" name="businessType"
+                                [(ngModel)]="retailer.businessType">
+                        </div>
+                        <div>
+                            <label for="tradeLisence" class="form-label">Trade Lisence</label>
+                            <input class="form-control" type="text" id="tradeLisence" name="tradeLisence"
+                                [(ngModel)]="retailer.tradeLisence">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Store Address</legend>
+                <div class="row">
+                    <div class="col-6">
+
+                        <div>
+                            <label for="strDevision" class="form-label">Devesion</label>
+                            <input class="form-control" type="text" id="strDevision" name="strDevision"
+                                [(ngModel)]="retailer.stDevision">
+                        </div>
+                        <div>
+                            <label for="strDistrict" class="form-label">District</label>
+                            <input class="form-control" type="text" id="strDistrict" name="strDistrict"
+                                [(ngModel)]="retailer.strDistrict">
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="strUpozela" class="form-label">Upozela</label>
+                            <input class="form-control" type="text" id="strUpozela" name="strUpozela"
+                                [(ngModel)]="retailer.strUpozela">
+                        </div>
+                        <div>
+                            <label for="strLocation" class="form-label">Store Location</label>
+                            <input class="form-control" type="text" id="strLocation" name="strLocation"
+                                [(ngModel)]="retailer.strLocation">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Delevary Address</legend>
+                <div class="row">
+                    <div class="col-6">
+
+                        <div>
+                            <label for="delDivison" class="form-label">Devesion</label>
+                            <input class="form-control" type="text" id="delDivison" name="delDivison"
+                                [(ngModel)]="retailer.delDivison">
+                        </div>
+                        <div>
+                            <label for="delDistrict" class="form-label">District</label>
+                            <input class="form-control" type="text" id="delDistrict" name="delDistrict"
+                                [(ngModel)]="retailer.delDistrict">
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="delUpozela" class="form-label">Upozela</label>
+                            <input class="form-control" type="text" id="delUpozela" name="delUpozela"
+                                [(ngModel)]="retailer.delUpozela">
+                        </div>
+                        <div>
+                            <label for="delLocation" class="form-label">Store Location</label>
+                            <input class="form-control" type="text" id="delLocation" name="delLocation"
+                                [(ngModel)]="retailer.delLocation">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <fieldset>
+                <legend>Account and Access</legend>
+                <div class="row">
+                    <div class="col-4">
+                        <div>
+                            <label for="ownerName" class="form-label">Owner Name</label>
+                            <input class="form-control" type="text" id="ownerName" name="ownerName"
+                                [(ngModel)]="retailer.ownerName">
+                        </div>
+                        <div>
+                            <label for="username" class="form-label">Username</label>
+                            <input class="form-control" type="text" id="username" name="username"
+                                [(ngModel)]="retailer.username">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control" type="email" id="email" name="email"
+                                [(ngModel)]="retailer.email">
+                        </div>
+                        <div>
+                            <label for="phone" class="form-label">Phone</label>
+                            <input class="form-control" type="text" id="phone" name="phone"
+                                [(ngModel)]="retailer.phone">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            <label for="password" class="form-label">Password</label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                [(ngModel)]="retailer.password">
+                        </div>
+                        <div>
+                            <label for="password" class="form-label">Re-Enter Password</label>
+                            <input class="form-control" type="password" id="" name="">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-control p-5 mb-3 rounded-lg">
+            <div class="mb-2">
+                <Label class="form-label">Notes</Label>
+                <textarea class="form-control" id="comment" name="comment" [(ngModel)]="retailer.comment"></textarea>
+            </div>
+            <div class="mb-2">
+                <label class="form-check-label" for="manufecturear-status">Status</label>
+                <select class="form-select" id="status" name="status" [(ngModel)]="retailer.status">
+                    <option class="" value="Active">Active</option>
+                    <option class="" value="Pending">Pending</option>
+                    <option class="" value="Deactive">Deactive</option>
+                </select>
+            </div>
+            <div class="">
+                <button class="btn btn-outline-success w-100" (click)="updateRetailer(retailer)">Application submit</button>
+            </div>
+        </div>
+    </form>
+</div>

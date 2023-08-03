@@ -1,0 +1,177 @@
+<div>
+    <form>
+        <div class="bg-body-tertiary p-5 form-control">
+            <h4 class="">Product List</h4>
+            <hr>
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th>SL No.</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let ci of cart; let i=index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{ci.pName}}</td>
+                        <td>{{ci.pQuantity}}</td>
+                        <td>{{ci.uPrice}}</td>
+                        <td>{{ci.price}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td>{{subTotal}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Discount</td>
+                        <td></td>
+                        <td>{{discount}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td></td>
+                        <td>{{total}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>VAT(15% on Subtotal)</td>
+                        <td></td>
+                        <td>{{vat}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Customer's Payable</td>
+                        <td></td>
+                        <td>{{customersPayable}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <form class="form-control">
+                <div>
+                    <div>
+                        <label class="form-label">Add Promo code or voucher</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-8"><input class="form-control"/></div>
+                        <div class="col-4"><button class="btn btn-info w-100">Apply</button></div>
+                    </div>   
+                    
+                </div>
+            </form>
+        </div>
+
+        <div class="bg-body-tertiary p-5 form-control">
+            <h4 class="">Dalevary Address</h4>
+            <hr>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="shop-name" class="form-label">Store Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="shopName" placeholder=""
+                        required>
+                </div>
+                <div class="col-6">
+                    <label for="owner-name" class="form-label">Owner Name</label>
+                    <input type="text" class="form-control" id="ownerName" name="ownerName" [(ngModel)]="ownerName"
+                        placeholder="" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="">
+                        <label for="firstName" class="form-label">Devision</label>
+                        <input type="text" class="form-control" id="firstName" name="ownerName" [(ngModel)]="ownerName"
+                            placeholder="" value="" required>
+                    </div>
+
+                    <div class="">
+                        <label for="delevary-district" class="form-label">District</label>
+                        <input type="text" class="form-control" id="delDistrict" name="delDistrict"
+                            [(ngModel)]="delDistrict" placeholder="" value="" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <label for="delevary-upozela" class="form-label">Upozila</label>
+                        <input type="text" class="form-control" id="delUpozela" name="delUpozela"
+                            [(ngModel)]="delUpozela" required>
+                    </div>
+                    <div class="">
+                        <label for="delLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="delLocation" name="delLocation"
+                            [(ngModel)]="delLocation" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <label for="email-address" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailAddress" name="emailAddress"
+                            [(ngModel)]="emailAddress" required>
+                    </div>
+                    <div class="">
+                        <label for="phoneNumber" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="phoneNumber"
+                            placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-body-tertiary p-5 form-control">
+
+            <!-- <h4 class="mb-3">Payment Method<span>(Please select only one! payment method)</span></h4>
+            <div class="my-3">
+                <div class="form-check">
+                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                    <label class="form-check-label" for="credit">Credit card</label>
+                </div>
+                <div class="form-check">
+                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <label class="form-check-label" for="debit">Debit card</label>
+                </div>
+                <div class="form-check">
+                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+            </div> -->
+
+            <!-- <div class="row">
+                <div class="col-md-6">
+                    <label for="cc-name" class="form-label">Name on card</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                    <small class="text-body-secondary">Full name as displayed on card</small>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="cc-number" class="form-label">Credit card number</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="cc-expiration" class="form-label">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="cc-cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                </div>
+            </div> -->
+
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" (click)="conformOrder()">Conform Order</button>
+        </div>
+    </form>
+</div>

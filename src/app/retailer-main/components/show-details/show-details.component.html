@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="row">
+            <div class="col-6">
+                <img src="{{'../assets/manufecturear/'+ products.pPicture}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <table class="table table-borderd table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Product ID</th>
+                                <td>{{products.pId}}</td>
+                            </tr>
+                            <tr>
+                                <th>Manufecturear</th>
+                                <td>{{products.manuName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Stock</th>
+                                <td>{{products.pName}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card-body">
+                    <h5 class="card-title">PRODUCT DETAILS</h5>
+                    <table class="table table-borderd table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Product Name</th>
+                                <td>{{products.pName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Generic</th>
+                                <td>{{products.pGeneric}}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{products.pDescription}}</td>
+                            </tr>
+                            <tr>
+                                <th>Stock</th>
+                                <td>{{products.pName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>{{products.pStock}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-2 ">
+                        <button class="btn btn-success" style="width: 50;" (click)="add2cart()">Add To Cart</button>
+                        <button class="btn btn-success">Add To Favorite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

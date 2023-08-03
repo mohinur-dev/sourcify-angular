@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <form class="form-control bg-light">
+        <div class="form-control mb-1">
+            <app-admin-header></app-admin-header>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-control" style="min-height:500px;">
+                    <app-admin-sideber></app-admin-sideber>
+                </div>  
+            </div>
+            <div class="col-9">
+                <div class="form-control" style="min-height:500px;">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        <div class="form-control mt-1">
+            <app-admin-footer></app-admin-footer>
+        </div>
+    </form>
+</div>

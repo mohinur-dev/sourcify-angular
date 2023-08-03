@@ -1,0 +1,43 @@
+<div class="d-flex flex-column flex-shrink-0 p-3">
+    <div>
+        <label>Manufecturear : </label>
+        <select class="form-select" name="selected" [(ngModel)]="selected" (change)="onChange()">
+            <option>---All Manufacturer---</option>
+            <option *ngFor="let manu of manufecturear" >{{manu.manuName}}</option>
+        </select>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Sl.No</td>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Generic</td>
+                    <td>Manufecturear ID</td>
+                    <td>Manufecturear Name</td>
+                    <td>Stock</td>
+                    <td>Unit Price</td>
+                    <td>Status</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let pdt of product; let i = index">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{pdt.pId}}</td>
+                    <td>{{pdt.pName}}</td>
+                    <td>{{pdt.pGeneric}}</td>
+                    <td>{{pdt.manuId}}</td>
+                    <td>{{pdt.manuName}}</td>
+                    <td>{{pdt.pStock}}</td>
+                    <td>{{pdt.uPrice}}</td>
+                    <td>{{pdt.pStatus}}</td>
+                    <td>
+                        <button class="btn btn-success" (click)="updateProductPage(pdt.pId)">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

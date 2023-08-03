@@ -1,0 +1,28 @@
+<div>
+    <table class="table table-stripted">
+        <thead>
+            <tr>
+                <th>Serial</th>
+                <th>Id</th>
+                <th>Order Date</th>
+                <th>ManufectureaId</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Dalevary Date</th>
+                <th>Show Details</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let odr of orderList; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{odr.oId}}</td>
+                <td>{{odr.oDate}}</td>
+                <td>{{odr.manuId}}</td>
+                <td>{{odr.status}}</td>
+                <td>{{odr.netPayable}}</td>
+                <td>{{odr.delDate}}</td>
+                <td><button class="btn btn-outline-info" (click)="viewInvoice(odr.oId)">VIEW</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { RetailerOrderComponent } from './components/retailer-order/retailer-order.component';
 import { RetailerInvoiceComponent } from './components/retailer-invoice/retailer-invoice.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { OrderTrakingComponent } from './components/order-traking/order-traking.component';
+import { SearchProductComponent } from './components/search-product/search-product.component';
+import { ProductRequestComponent } from './components/product-request/product-request.component';
+import { ProductRequestStatusComponent } from './components/product-request-status/product-request-status.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     CheckOutComponent,
     RetailerOrderComponent,
     RetailerInvoiceComponent,
-    WishlistComponent
+    WishlistComponent,
+    OrderTrakingComponent,
+    SearchProductComponent,
+    ProductRequestComponent,
+    ProductRequestStatusComponent
   ],
   imports: [
     CommonModule,

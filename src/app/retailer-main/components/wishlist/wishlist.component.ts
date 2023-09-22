@@ -15,8 +15,8 @@ export class WishlistComponent {
   wishlist: Wishlist = new Wishlist();
   wishList: any[] = [];
 
-  constructor(private retailerService: RetailerService, private toast: NgToastService, 
-    private router: Router) { 
+  constructor(private retailerService: RetailerService, private toast: NgToastService,
+    private router: Router) {
 
   }
 
@@ -36,6 +36,8 @@ export class WishlistComponent {
     this.retailerService.add2cart(cart).subscribe(data => {
       if (data != null) {
         this.toast.success({ detail: "SUCCESS", summary: 'Successfully added', duration: 5000, position: 'topCenter' });
+        this.retailerService.toUpdateCart();
+        // this.deleteFromWishlistWhenAdd2Cart(wi);
       } else {
         this.toast.error({ detail: 'ERROR', summary: 'Failed to add', duration: 5000, position: 'topCenter', })
       }
@@ -51,14 +53,11 @@ export class WishlistComponent {
     }
   }
 
-  // deleteFromWishlist(wList: Wishlist) {
-  //   if (confirm("Do you want to delete this product from wishlist ?")) {
-  //     this.retailerService.deleteFromWishlistByWishlistId(wList).subscribe((data) => {
-  //       console.log('success', data);
-  //       this.ngOnInit();
-  //     })
-  //   }
-  // }
+  deleteFromWishlistWhenAdd2Cart(wList: Wishlist) {
+    this.retailerService.deleteFromWishlistByProductId(wList).subscribe((data) => {
+      this.ngOnInit();
+    })
+  }
 
   showDetailsPage(id: any) {
     this.router.navigate(['retailer-main/show-details', id]);

@@ -21,7 +21,12 @@
                 <td>{{odr.status}}</td>
                 <td>{{odr.netPayable}}</td>
                 <td>{{odr.delDate}}</td>
-                <td><button class="btn btn-outline-info" (click)="viewInvoice(odr.oId)">VIEW</button></td>
+                <td>
+                    <button class="btn btn-outline-info" (click)="printInvoice()">Print Invoice</button>
+                    <button class="btn btn-outline-info" (click)="viewInvoice(odr.oId)">VIEW</button>
+                    <button class="btn btn-outline-info" (click)="orderTrakingPage(odr.oId) ">Traking</button>
+                </td>
+
             </tr>
         </tbody>
     </table>

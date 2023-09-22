@@ -1,44 +1,31 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ManufecturearService } from 'src/app/services/manufecturear.service';
-import { Product } from '../products/classes/product';
+
 
 @Component({
-  selector: 'app-manufecturear-home',
-  templateUrl: './manufecturear-home.component.html',
-  styleUrls: ['./manufecturear-home.component.css']
+	selector: 'app-manufecturear-home',
+	templateUrl: './manufecturear-home.component.html',
+	styleUrls: ['./manufecturear-home.component.css']
 })
 export class ManufecturearHomeComponent {
+	chartOptions = {
+		title: {
+		  text: "Basic Column Chart in Angular"
+		},
+		data: [{
+		  type: "column",
+		  dataPoints: [
+			{ label: "Apple",  y: 10  },
+			{ label: "Orange", y: 15  },
+			{ label: "Banana", y: 25  },
+			{ label: "Mango",  y: 30  },
+			{ label: "Grape",  y: 28  }
+		  ]
+		}]                
+	  };
 
-  constructor(private router: Router, private manufecturearService: ManufecturearService, private route: ActivatedRoute) {
-    this.showProduct();
-  }
-  product: Product = new Product();
-  products: any;
 
-  ngOnInit() {
-    this.showProduct();
-  }
 
-  showProduct() {
-    let id = localStorage.getItem('manuId');
-    this.manufecturearService.getProductListByManuId(id).subscribe(response => {
-      this.products = response;
-      
 
-    })
-  }
 
-  removeProduct(id: any) {
-    if (confirm("Delete this product?")) {
-      this.manufecturearService.deleteProduct(this.products).subscribe(data => {
-        this.showProduct();
-      });
-    }
-  }
-
-  updatePage(id: any) {
-    this.router.navigate(["manufecturear-main/update-product", id]);
-  }
 
 }

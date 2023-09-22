@@ -10,6 +10,8 @@ import { AdminMainModule } from './admin-main/admin-main.module';
 import { RetailerMainModule } from './retailer-main/retailer-main.module';
 import { ManufecturearMainModule } from './manufecturear-main/manufecturear-main.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -25,7 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     AdminMainModule,
     RetailerMainModule,
     ManufecturearMainModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

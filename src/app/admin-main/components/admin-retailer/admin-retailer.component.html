@@ -1,7 +1,6 @@
 <div class="d-flex flex-column flex-shrink-0 p-3">
-    <div class="text-end">
-        <label class="form-lebel">Filter : </label>
-        <select class="from-control" [(ngModel)]="selected" (change)="onChange()">
+    <div class="">
+        <select class="form-select" [(ngModel)]="selected" (change)="onChange()">
             <option value="Active">Active</option>
             <option value="Deactive">Deactive</option>
             <option value="Pending">Pending</option>
@@ -26,6 +25,7 @@
                 <td>{{r.businessType}}</td>
                 <td>{{r.status}}</td>
                 <td>
+                    <button class="btn btn-success" (click)="retailerReports(r.id)">Reports</button>
                     <button class="btn btn-success" (click)="updateRetailerPage(r.id)">Update</button>
                 </td>
             </tr>

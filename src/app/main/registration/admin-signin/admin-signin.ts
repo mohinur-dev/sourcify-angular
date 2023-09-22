@@ -1,15 +1,10 @@
 export class AdminSignin {
-    name?: any;
-    role?:any;
-    email?:any;
+    id?: any;
     username?: any;
-    password?: any;
+    password?:any;
 
-    // 
-    constructor(username?:any, password?:any, name?:any, role?:any, email?:any) {
-        this.name = name;
-        this.role = role;
-        this.email = email;
+    constructor(id?:any, username?:any, password?:any) {
+        this.id = id;
         this.username = username;
         this.password = password;
     }

@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./retailer-sideber.component.css']
 })
 export class RetailerSideberComponent {
+  retPicture = localStorage.getItem("retPicture");
+  
   constructor() {
   }
 
   ngOnInit() {
+  this.retPicture;
   }
 }

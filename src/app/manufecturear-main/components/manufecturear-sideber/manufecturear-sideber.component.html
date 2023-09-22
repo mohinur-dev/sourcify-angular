@@ -32,14 +32,14 @@
 
 <div class="d-flex flex-column flex-shrink-0 p-3">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img class="bi pe-none me-2" src="../../../../assets/manufecturear/beximco.png" width="40" height="32">
-            
+        <img class="bi pe-none me-2" src="../../../../../../assets/manufecturear/{{manuPicture}}" width="40"
+            height="32">
         <span class="fs-4">Manufecturear</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="manufecturear-main" class="nav-link active" aria-current="page">
+            <a routerLink="manufecturear-home" class="nav-link link-body-emphasis" aria-current="page">
                 <svg class="bi pe-none me-2" width="16" height="16">
                     <use xlink:href="#home" />
                 </svg>
@@ -47,11 +47,27 @@
             </a>
         </li>
         <li>
-            <a href="manufecturear-main/add-product" class="nav-link link-body-emphasis">
+            <a routerLink="manufecturer-product" class="nav-link link-body-emphasis">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#grid" />
+                </svg>
+                Products
+            </a>
+        </li>
+        <li>
+            <a routerLink="add-product" class="nav-link link-body-emphasis">
                 <svg class="bi pe-none me-2" width="16" height="16">
                     <use xlink:href="#speedometer2" />
                 </svg>
                 Add Products
+            </a>
+        </li>
+        <li>
+            <a routerLink="#" class="nav-link link-body-emphasis">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" />
+                </svg>
+                Customers
             </a>
         </li>
         <li>
@@ -62,28 +78,29 @@
                 Orders
             </a>
         </li>
+
         <li>
-            <a href="#" class="nav-link link-body-emphasis">
+            <a routerLink="business-reports" class="nav-link link-body-emphasis">
                 <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#grid" />
+                    <use xlink:href="#table" />
                 </svg>
-                Products
+                BusinessReports
             </a>
         </li>
+        <hr>
         <li>
-            <a href="#" class="nav-link link-body-emphasis">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#people-circle" />
-                </svg>
-                Customers
+            <a routerLink="manufecturer-signin" class="nav-link link-body-emphasis" (click)="manufecturearSignout()">
+                <i class="fa-solid fa-right-from-bracket mx-2 text-danger"></i> 
+                <span class="text-danger">Signout</span>
             </a>
         </li>
     </ul>
-    <hr>
-    <div class="dropdown">
+
+    <!-- <div class="dropdown">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../../../../assets/manufecturear/incepta/" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img src="../../../../../../assets/manufecturear/{{manuPicture}}" alt="" width="32" height="32"
+                class="rounded-circle me-2">
             <strong>{{username}}</strong>
         </a>
         <ul class="dropdown-menu text-small shadow">
@@ -95,15 +112,15 @@
             </li>
             <li><a class="dropdown-item" (click)="manufecturearSignout()">Sign out</a></li>
         </ul>
-    </div>
+    </div> -->
 </div>
 <script>
     /* global bootstrap: false */
-    (() => {
-        'use strict'
-        const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        tooltipTriggerList.forEach(tooltipTriggerEl => {
-            new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    })()
+    // (() => {
+    //     'use strict'
+    //     const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    //     tooltipTriggerList.forEach(tooltipTriggerEl => {
+    //         new bootstrap.Tooltip(tooltipTriggerEl)
+    //     })
+    // })()
 </script>

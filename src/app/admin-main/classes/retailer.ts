@@ -4,7 +4,7 @@ export class Retailer {
     catagory?: any;
     businessType?: any;
     tradeLisence?: any;
-    stDevision?: any;
+    strDevision?: any;
     strDistrict?: any;
     strUpozela?: any;
     strLocation?: any;
@@ -21,7 +21,7 @@ export class Retailer {
     status?: any;
     retPicture?: any;
 
-    constructor(id?:any, name?: any, catagory?: any, businessType?: any, tradeLisence?: any, stDevision?: any,
+    constructor(id?:any, name?: any, catagory?: any, businessType?: any, tradeLisence?: any, strDevision?: any,
         strDistrict?: any, strUpozela?: any, strLocation?: any, delDivison?: any, delDistrict?: any,
         delUpozela?: any, delLocation?: any, ownerName?: any, username?: any, email?: any, phone?: any,
         password?: any, comment?: any, status?: any, retPicture?: any) {
@@ -30,7 +30,7 @@ export class Retailer {
         this.catagory = catagory;
         this.businessType = businessType;
         this.tradeLisence = tradeLisence;
-        this.stDevision = stDevision;
+        this.strDevision = strDevision;
         this.strDistrict = strDistrict;
         this.strUpozela = strUpozela;
         this.strLocation = strLocation;

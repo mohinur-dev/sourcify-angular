@@ -15,6 +15,14 @@ import { AdminProductComponent } from './components/admin-product/admin-product.
 import { ManufecturearUpdateComponent } from './components/manufecturear-update/manufecturear-update.component';
 import { RetailerUpdateComponent } from './components/retailer-update/retailer-update.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { AdminOrderUpdateComponent } from './components/admin-order-update/admin-order-update.component';
+import { RetailerRequestComponent } from './components/retailer-request/retailer-request.component';
+import { RetailerRequestUpdateComponent } from './components/retailer-request-update/retailer-request-update.component';
+import { RetailerReportComponent } from './components/retailer-report/retailer-report.component';
+import { ManufecturearReportComponent } from './components/manufecturear-report/manufecturear-report.component';
+import { TotalRevenueComponent } from './components/total-revenue/total-revenue.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { RetailerTotalComponent } from './components/retailer-total/retailer-total.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +38,21 @@ import { ProductUpdateComponent } from './components/product-update/product-upda
     ManufecturearUpdateComponent,
     RetailerUpdateComponent,
     ProductUpdateComponent,
+    AdminOrderUpdateComponent,
+    RetailerRequestComponent,
+    RetailerRequestUpdateComponent,
+    RetailerReportComponent,
+    ManufecturearReportComponent,
+    TotalRevenueComponent,
+    RetailerTotalComponent,
     
     
   ],
   imports: [
     CommonModule,
     AdminMainRoutingModule,
-    FormsModule
+    FormsModule,
+    CanvasJSAngularChartsModule
   ]
 })
 export class AdminMainModule { }

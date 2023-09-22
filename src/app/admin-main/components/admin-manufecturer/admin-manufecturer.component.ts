@@ -43,4 +43,8 @@ export class AdminManufecturerComponent {
   updateManufecturearPage(id:any){
     this.router.navigate(['admin-main/manufecturear-update',id]);
   }
+
+  manufecturearReports(id:any){
+    this.router.navigate(['admin-main/manufecturear-report',id]);
+  }
 }

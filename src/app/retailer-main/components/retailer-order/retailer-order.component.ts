@@ -9,23 +9,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./retailer-order.component.css']
 })
 export class RetailerOrderComponent {
-  constructor(private router:Router, private retailerService: RetailerService) {}
+  constructor(private router: Router, private retailerService: RetailerService) { }
 
   ngOnInit() {
     this.getOrderList();
   }
 
-  orderList:any;
+  orderList: any;
   getOrderList() {
     let retId = localStorage.getItem('id')
-    this.retailerService.getOrderListByRetId(retId).subscribe(response =>{
+    this.retailerService.getOrderListByRetId(retId).subscribe(response => {
       this.orderList = response;
     })
   }
 
-  viewInvoice(id:any) {
+  viewInvoice(id: any) {
     this.router.navigate(['retailer-main/retailer-invoice', id]);
   }
+
+  orderTrakingPage(id: any) {
+    this.router.navigate(['retailer-main/order-traking', id])
+  }
+  printInvoice(){
+    
+  }
+
 }
 
 

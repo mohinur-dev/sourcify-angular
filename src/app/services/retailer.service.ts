@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RetailerSignin } from '../main/registration/retailer-signin/retailer-signin';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { RetailerSignup } from '../main/registration/retailer-signup/retailer-signup';
 import { ProductDetails } from '../retailer-main/components/classes/product-details';
 import { Cart } from '../retailer-main/components/cart/cart';
 import { Order } from '../retailer-main/components/classes/order';
 import { Wishlist } from '../retailer-main/components/wishlist/wishlist';
+import { Product } from '../manufecturear-main/components/products/classes/product';
+import { ProductRequest } from '../retailer-main/components/product-request/product-request';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +47,13 @@ export class RetailerService {
     return this.client.post(this.baseUrl, info);
   }
 
+  //update cart 
+  private parentMethodeCallSource = new Subject<any>();
+  parentMethodeCalled$ = this.parentMethodeCallSource.asObservable();
+  toUpdateCart() {
+    this.parentMethodeCallSource.next('');
+  }
+
   //get cart list by retailer id
   getCartListByRetId(id: any): Observable<Cart[]> {
     this.baseUrl = 'http://localhost:8080/';
@@ -81,7 +90,7 @@ export class RetailerService {
     return this.client.get<Order[]>(`${this.baseUrl}order-list/${id}`)
   }
 
-  //get order information
+  //get order information by id
   getOrderInfoByOrderId(id: number): Observable<Order> {
     this.baseUrl = 'http://localhost:8080/';
     return this.client.get<Order>(`${this.baseUrl}order-info/${id}`)
@@ -115,5 +124,40 @@ export class RetailerService {
   deleteFromWishlistByRetailerId(wList: Wishlist) {
     this.baseUrl = 'http://localhost:8080/delete-wishlist-retailer-id';
     return this.client.post(this.baseUrl, wList);
+  }
+
+  //search product information by name
+  searchProductByName(name: any): Observable<Product[]> {
+    this.baseUrl = 'http://localhost:8080/';
+    return this.client.get<Product[]>(`${this.baseUrl}search-product/${name}`)
+  }
+
+  updateQuantity(id: any, qty: any, plus: boolean) {
+    this.baseUrl = 'http://localhost:8080/';
+    return this.client.get(`${this.baseUrl}update-quantity`, {
+      params: {
+        productId: id,
+        qty,
+        plus
+      }
+    })
+  }
+
+  //get related product
+  getRelatedProduct(name: any): Observable<Product[]> {
+    this.baseUrl = 'http://localhost:8080/';
+    return this.client.get<Product[]>(`${this.baseUrl}get-related-product/${name}`)
+  }
+
+  //add product request
+  add2ProductRequest(info: ProductRequest) {
+    this.baseUrl = 'http://localhost:8080/add-product-request'
+    return this.client.post(this.baseUrl, info);
+  }
+
+   //get requested product by retailer id
+   getRequestedProductByRetId(id: any): Observable<ProductRequest[]> {
+    this.baseUrl = 'http://localhost:8080/';
+    return this.client.get<ProductRequest[]>(`${this.baseUrl}get-requested-product-list/${id}`)
   }
 }

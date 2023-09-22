@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row p-5">
+        <div class="mb-5">
+            <h1>Submit your product request</h1>
+            <hr>
+        </div>
+        <div class="col">
+            <div class="">
+                <label for="" class="form-label">Manufecturear ID</label>
+                <input class="form-control" type="text" id="prName" name="prName" [(ngModel)]="pr.prManuId">
+            </div>
+            <div class="">
+                <label for="" class="form-label">Manufecturear Name</label>
+                <input class="form-control" type="text" id="prManuName" name="prManuName" [(ngModel)]="pr.prManuName">
+            </div>
+            <!-- <div class="">
+                <label for="" class="form-label">Retailer ID</label>
+                <input class="form-control" type="text" id="prRetId" name="prRetId" [(ngModel)]="pr.prRetId">
+            </div>
+            <div class="">
+                <label for="" class="form-label">Retailer Name</label>
+                <input class="form-control" type="text" id="" name="" [(ngModel)]="pr.prRetName">
+            </div> -->
+        <!-- </div>
+        <div class="col-6"> -->
+            <div class="">
+                <label for="" class="form-label">Product Name</label>
+                <input class="form-control" type="text" id="prName" name="prName" [(ngModel)]="pr.prName">
+            </div>
+            <div class="">
+                <label for="" class="form-label">Product Generic</label>
+                <input class="form-control" type="text" id="prGeneric" name="prGeneric" [(ngModel)]="pr.prGeneric">
+            </div>
+            <div class="">
+                <label for="" class="form-label">Product Picture</label>
+                <input class="form-control" type="text" id="prPicture" name="prPicture" [(ngModel)]="pr.prPicture">
+            </div>
+            <div class="">
+                <label for="" class="form-label">Requard Quantity</label>
+                <input class="form-control" type="text" id="prQuantity" name="prQuantity" [(ngModel)]="pr.prQuantity">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-6" style="align-items: center;">
+                <button class="btn btn-outline-success w-100" (click)="add2ProductRequest()">Submit Request</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-outline-success w-100">View Previous Request</button>
+            </div>
+        </div>
+    </div>
+</div>

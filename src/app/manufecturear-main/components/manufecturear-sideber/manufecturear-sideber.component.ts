@@ -8,13 +8,19 @@ import { Router } from '@angular/router';
 })
 export class ManufecturearSideberComponent {
   username: any;
+  manuPicture: any = localStorage.getItem('manuPicture');
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
     this.username = localStorage.getItem("username");
-    if(this.username == null) {
+    if (this.username == null) {
       router.navigate(["manufacturer/manufecturear-signin"]);
     }
   }
+
+  onOnInit() {
+    console.log(this.manuPicture);
+  }
+  
   manufecturearSignout() {
     localStorage.removeItem("manuId");
     localStorage.removeItem("manuName");

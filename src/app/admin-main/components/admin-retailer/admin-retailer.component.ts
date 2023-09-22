@@ -42,4 +42,8 @@ export class AdminRetailerComponent {
   updateRetailerPage(id:any) {
     this.router.navigate(['admin-main/retailer-update',id]);
   }
+
+  retailerReports(id:any) {
+    this.router.navigate(['admin-main/retailer-report',id]);
+  }
 }

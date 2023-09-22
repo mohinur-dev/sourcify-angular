@@ -19,7 +19,7 @@ export class Manufecturear {
     coUpozla?: any;
     coLocation?: any;
     facDivision?: any;
-    facDictrict?: any;
+    facDistrict?: any;
     facUpozela?: any;
     facLocation?: any;
     username?: any;
@@ -31,7 +31,7 @@ export class Manufecturear {
     constructor(manuId?: any, manuName?: any, productType?: any, website?: any, email?: any, repName?: any, repDeg?: any,
         repEmail?: any, repPhone?: any, bank?: any, branch?: any, accName?: any, accType?: any, accNumber?: any,
         accRoutingNum?: any, coDivision?: any, coDistrict?: any, coUpozla?: any, coLocation?: any, facDivision?: any,
-        facDictrict?: any, facUpozela?: any, facLocation?: any, username?: any, password?: any, status?: any,
+        facDistrict?: any, facUpozela?: any, facLocation?: any, username?: any, password?: any, status?: any,
         comments?: any, manuPicture?: any) {
         this.manuId = manuId;
         this.manuName = manuName;
@@ -53,7 +53,7 @@ export class Manufecturear {
         this.coUpozla = coUpozla;
         this.coLocation = coLocation;
         this.facDivision = facDivision;
-        this.facDictrict = facDictrict;
+        this.facDistrict = facDistrict;
         this.facUpozela = facUpozela;
         this.facLocation = facLocation;
         this.username = username;

@@ -26,7 +26,6 @@ export class CartComponent {
     let id = localStorage.getItem('id');
     this.retailerService.getCartListByRetId(id).subscribe(data => {
       this.cart = data;
-      console.log(data);
       this.calcCartTotal();
     })
   }
@@ -70,6 +69,7 @@ export class CartComponent {
     this.retailerService.deleteOneCartItems(cart).subscribe(data => {
       console.log("success", data);
       this.ngOnInit();
+      this.retailerService.toUpdateCart();
     })
   }
 

@@ -1,0 +1,201 @@
+<div class="container p-5">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <strong>Order Number : </strong>#{{order.oId}}<br>
+                    <strong>Retailer Name : </strong>{{order.retId}}<br>
+                    <strong>Order Date : </strong>{{order.oDate}}
+                </div>
+                <div class="col-6">
+                    <strong>Order Status : </strong>#{{order.status}}<br>
+                    <strong>Manufacturer Name : </strong>{{order.manuId}}<br>
+                    <strong>Estimated Delivery Date : </strong>{{order.delDate}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- timeline item 1 -->
+    <div class="row g-0">
+        <div class="col-sm">
+            <!--spacer-->
+        </div>
+        <!-- timeline item 1 center dot -->
+        <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+                <div class="col">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <h5 class="m-2">
+                <span class="badge rounded-pill bg-light border"
+                    [class.bg-primary]="order.status == 'Pending'">&nbsp;</span>
+            </h5>
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+        </div>
+        <!-- timeline item 1 event content -->
+        <div class="col-sm py-2">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <h4 class="card-title" [class.text-primary]="order.status == 'Pending'">Pending</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+
+
+    <!-- timeline item 2 -->
+    <div class="row g-0">
+        <div class="col-sm py-2">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <h4 class="card-title" [class.text-danger]="order.status == 'Processing'">Processing</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <h5 class="m-2">
+                <span class="badge rounded-pill bg-light border"
+                    [class.bg-danger]="order.status == 'Processing'">&nbsp;</span>
+            </h5>
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <!--spacer-->
+        </div>
+    </div>
+    <!--/row-->
+
+
+    <!-- timeline item 3 -->
+    <div class="row g-0">
+        <div class="col-sm">
+            <!--spacer-->
+        </div>
+        <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <h5 class="m-2">
+                <span class="badge rounded-pill bg-light border"
+                    [class.bg-primary]="order.status == 'Conformed'">&nbsp;</span>
+            </h5>
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+        </div>
+        <div class="col-sm py-2">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <h4 class="card-title" [class.text-primary]="order.status == 'Conformed'">Conformed</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+
+
+    <!-- timeline item 4 -->
+    <div class="row g-0">
+        <div class="col-sm py-2">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <h4 class="card-title" [class.text-primary]="order.status == 'Delivered'">Delivered</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <h5 class="m-2">
+                <span class="badge rounded-pill bg-light border"
+                    [class.bg-primary]="order.status == 'Delivered'">&nbsp;</span>
+            </h5>
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <!--spacer-->
+        </div>
+    </div>
+    <!--/row-->
+
+
+    <!-- timeline item 5 -->
+    <div class="row g-0">
+        <div class="col-sm">
+            <!--spacer-->
+        </div>
+        <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <h5 class="m-2">
+                <span class="badge rounded-pill bg-light border"
+                    [class.bg-success]="order.status == 'Completed'">&nbsp;</span>
+            </h5>
+            <div class="row h-50">
+                <div class="col">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+            </div>
+        </div>
+        <div class="col-sm py-2">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <h4 class="card-title" [class.text-success]="order.status == 'Completed'">Completed</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+
+        <!-- timeline item 6 -->
+        <div class="row g-0">
+            <div class="col-sm py-2">
+                <div class="card radius-15">
+                    <div class="card-body">
+                        <h4 class="card-title" [class.text-primary]="order.status == 'Cancel'">Cancel</h4>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+                <div class="row h-50">
+                    <div class="col border-end">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <h5 class="m-2">
+                    <span class="badge rounded-pill bg-light border"
+                        [class.bg-primary]="order.status == 'Cancel'">&nbsp;</span>
+                </h5>
+                <div class="row h-50">
+                    <div class="col border-end">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <!--spacer-->
+            </div>
+        </div>
+        <!--/row-->
+</div>
+
+

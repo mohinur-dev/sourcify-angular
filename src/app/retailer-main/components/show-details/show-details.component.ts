@@ -26,21 +26,17 @@ export class ShowDetailsComponent {
   price?: any;
   pPicture?: any;
   retId?: any;
+  relatedProduct?: any;
 
   ngOnInit() {
+    this.getProductDetails();
+    
+  }
+
+  getProductDetails() {
     let id = this.route.snapshot.params['id'];
     this.retailerService.getProductInfoById4retailer(id).subscribe(data => {
       this.products = data;
-      this.productDetails.pId = this.products.pId;
-      this.productDetails.manuName = this.products.manuName;
-      this.productDetails.manuId = this.products.manuId;
-      this.productDetails.pName = this.products.pName;
-      this.productDetails.pGeneric = this.products.pGeneric;
-      this.productDetails.pStock = this.products.pStock;
-      this.productDetails.uPrice = this.products.uPrice;
-      this.productDetails.pPicture = this.products.pPicture;
-      this.productDetails.pDescription = this.products.pDescription;
-      this.productDetails.pStatus = this.products.pStatus;
 
       this.pId = this.products.pId;
       this.pName = this.products.pName;
@@ -51,20 +47,25 @@ export class ShowDetailsComponent {
       this.price = this.products.uPrice;
       this.pQuantity = 1;
       this.retId = localStorage.getItem('id');
-      
+      this.getRelaterProductList();
     });
+  }
+
+  getRelaterProductList() {
+    this.retailerService.getRelatedProduct(this.products.pGeneric).subscribe((data) => {
+      this.relatedProduct = data; 
+    })
   }
 
   add2cart() {
-    let cart: Cart = new Cart(null, this.pId, this.pName, this.manuId, this.manuName,this.pQuantity, this.uPrice, this.price, this.pPicture, this.retId);
+    let cart: Cart = new Cart(null, this.pId, this.pName, this.manuId, this.manuName, this.pQuantity, this.uPrice, this.price, this.pPicture, this.retId);
     this.retailerService.add2cart(cart).subscribe(data => {
       if (data != null) {
-        this.toast.success({detail:"SUCCESS", summary:'Successfully added', duration:5000, position:'topCenter'});
+        this.retailerService.toUpdateCart();
+        this.toast.success({ detail: "SUCCESS", summary: 'Successfully added', duration: 5000, position: 'topCenter' });
       } else {
-        this.toast.error({detail:'ERROR', summary:'Failed to add', duration:5000, position:'topCenter',})
+        this.toast.error({ detail: 'ERROR', summary: 'Failed to add', duration: 5000, position: 'topCenter', })
       }
     });
   }
-
-
 }

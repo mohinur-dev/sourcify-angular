@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div>
+        <h1>Business Reports:</h1>
+        <hr>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sl.No.</th>
+                        <th>Order Number</th>
+                        <th>Retailer Name</th>
+                        <th>Order Amount</th>
+                        <th>VAT</th>
+                        <th>Discount</th>
+                        <th>Retailer Payable</th>
+                        <th>Platform Commission</th>
+                        <th>Manufacturer Earning</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let rev of revenue; let i = index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{rev.orderId}}</td>
+                        <td>{{rev.retName}}</td>
+                        <td>{{rev.orderAmount}}</td>
+                        <td>{{rev.vat}}</td>
+                        <td>{{rev.discount | number: '1.0-0'}}</td>
+                        <td>{{rev.retPay}}</td>
+                        <td>{{rev.platformCom | number: '1.0-0'}}</td>
+                        <td>{{rev.manuEarning}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{totalOrderAmount}}</td>
+                        <td>{{tatalVAT}}</td>
+                        <td>{{totalDiscount}}</td>
+                        <td>{{totalPlatformCommission}}</td>
+                        <td>{{totalRetailerPay}}</td>
+                        <td>{{totalManufacturerEarning}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+

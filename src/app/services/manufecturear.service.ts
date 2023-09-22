@@ -22,14 +22,12 @@ export class ManufecturearService {
 
   //manufecturer sign up
   SignupManufecturear(info:ManufecturearSignup) {
-    console.log(info);
     this.baseUrl = 'http://localhost:8080/manufecturear-signup'
     return this.client.post(this.baseUrl, info);
   }
 
   //add product 
   addProduct(info:Product) {
-    console.log(info);
     this.baseUrl = 'http://localhost:8080/add-product'
     return this.client.post(this.baseUrl, info)
   }

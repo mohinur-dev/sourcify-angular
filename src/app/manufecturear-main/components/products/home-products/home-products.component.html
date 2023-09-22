@@ -1,1 +1,37 @@
-<p>home-products works!</p>
+<div class="container p-5">
+    <h1 class="text-center mt-3">Available Products</h1>
+    <hr>
+    <table class="table table-bordered">
+        <thead class="text-center">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Generic</th>
+            <th>Picture</th>
+            <th>Stock</th>
+            <th>Unit Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </thead>
+        <tbody *ngFor="let ptd of products">
+            <td>{{ptd.pId}}</td>
+            <td>{{ptd.pName}}</td>
+            <td>{{ptd.pGeneric}}</td>
+            <td><img src="{{'../assets/manufecturear/'+ ptd.pPicture}}" height="50" alt="not-fund"></td>
+            <td>{{ptd.pStock}}</td>
+            <td>{{ptd.uPrice}}</td>
+            <td>{{ptd.pStatus}}</td>
+            <td>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-outline-success" (click)="updatePage(ptd.pId)"><i
+                                class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-outline-danger" (click)="removeProduct(ptd.pId)"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </td>
+        </tbody>
+    </table>
+</div>

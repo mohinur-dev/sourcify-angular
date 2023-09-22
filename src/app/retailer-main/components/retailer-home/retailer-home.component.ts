@@ -40,6 +40,7 @@ export class RetailerHomeComponent {
     this.retailerService.add2cart(cart).subscribe(data => {
       if (data != null) {
         this.toast.success({ detail: "SUCCESS", summary: 'Successfully added', duration: 5000, position: 'topCenter' });
+        this.retailerService.toUpdateCart();
       } else {
         this.toast.error({ detail: 'ERROR', summary: 'Failed to add', duration: 5000, position: 'topCenter', })
       }

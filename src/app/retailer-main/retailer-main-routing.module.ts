@@ -8,6 +8,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
 import { RetailerOrderComponent } from './components/retailer-order/retailer-order.component';
 import { RetailerInvoiceComponent } from './components/retailer-invoice/retailer-invoice.component';
+import { OrderTrakingComponent } from './components/order-traking/order-traking.component';
+import { SearchProductComponent } from './components/search-product/search-product.component';
+import { ProductRequestComponent } from './components/product-request/product-request.component';
+import { ProductRequestStatusComponent } from './components/product-request-status/product-request-status.component';
 
 const routes: Routes = [
   {path:'retailer-main', component:RetailerMainComponent, children:[
@@ -18,7 +22,11 @@ const routes: Routes = [
     {path:'check-out', component:CheckOutComponent},
     {path:'retailer-order', component:RetailerOrderComponent},
     {path:'retailer-invoice/:id', component:RetailerInvoiceComponent},
-    {path:'wishlist', component:WishlistComponent}
+    {path:'wishlist', component:WishlistComponent},
+    {path:'order-traking/:id', component:OrderTrakingComponent},
+    {path:'search-product', component:SearchProductComponent},
+    {path:'product-request', component:ProductRequestComponent},
+    {path:'get-requested-product-list', component:ProductRequestStatusComponent}
   ]}
 ];
 

@@ -1,0 +1,112 @@
+<div>
+    <form>
+        <div class="p-5">
+            <h4 class="text-center">Order Details</h4>
+            <hr>
+            <div class="row mb-5">
+                <div class="col-5 text-end">
+                    <h5>Order By</h5>
+                    <hr>
+                    {{retailer.id}} - {{retailer.name}}<br>
+                    {{retailer.catagory}} <br>
+                    {{retailer.email}} <br>
+                    {{retailer.phone}} <br>
+                    {{retailer.strLocation}} <br>
+                    {{retailer.strUpozela}}, {{retailer.strDevision}}, {{retailer.strDistrict}}.
+                </div>
+                <div class="col-2 text-center">
+
+                </div>
+                <div class="col-5 text-start">
+                    <h5>Dalevary Address</h5>
+                    <hr>
+                    {{retailer.id}} - {{retailer.name}}<br>
+                    {{retailer.catagory}} <br>
+                    {{retailer.email}} <br>
+                    {{retailer.phone}} <br>
+                    {{retailer.strLocation}} <br>
+                    {{retailer.strUpozela}}, {{retailer.strDevision}}, {{retailer.strDistrict}}.
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">SL No.</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Unit Price</th>
+                        <th class="text-end">Price</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let oi of order.orderItems; let i=index">
+                    <tr>
+                        <td class="text-center">{{i+1}}</td>
+                        <td>{{oi.pName}}</td>
+                        <td class="text-center">{{oi.pQuantity}}</td>
+                        <td class="text-center">{{oi.uPrice}}</td>
+                        <td class="text-end">{{oi.price}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td class="text-end">{{order.subtotal}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Discount</td>
+                        <td></td>
+                        <td class="text-end">{{order.discount}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td></td>
+                        <td class="text-end">{{order.oAmount}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>VAT(15% on Subtotal)</td>
+                        <td></td>
+                        <td class="text-end">{{order.vat}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Customer's Payable</td>
+                        <td></td>
+                        <td class="text-end">{{order.netPayable}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+       
+
+        <div class="bg-body-tertiary p-5 form-control">
+            <hr class="my-4">
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="form-lable">Delivery Date</label>
+                    <input class="form-control" type="date" id="delivery-date" name="order.delDate" [(ngModel)]="order.delDate">
+                </div>
+                <div class="col">
+                    <label class="form-lable">Order Status</label>
+                    <select id="order-status" name="order.status" [(ngModel)]="order.status" class="form-select">
+                        <option>Processing</option>
+                        <option>Conformed</option>
+                        <option>Delivered</option> 
+                        <option>Cancel</option>  
+                    </select>
+                </div>
+            </div>
+            <button class="w-100 btn btn-primary btn-lg" (click)="updateOrderInformationById(order)">Update Order</button>
+        </div>
+    </form>
+</div>

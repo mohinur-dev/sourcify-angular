@@ -19,9 +19,11 @@ export class ManufecturerOrderComponent {
     let manuId = localStorage.getItem('manuId');
     this.manufecturearService.getOrderListByManuId(manuId).subscribe(response => {
       this.orderList = response;
-      console.log(response);
-      
     })
+  }
+
+  manuOrderUpdatePage(id: any) {
+    this.router.navigate(['manufecturear-main/manu-order-update',id]);
   }
 
 }

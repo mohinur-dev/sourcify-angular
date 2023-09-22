@@ -11,7 +11,6 @@ import { RetailerService } from 'src/app/services/retailer.service';
 export class RetailerSigninComponent {
   constructor(private router: Router, private retailerRouter: RetailerService) {
     let username = localStorage.getItem("username");
-
     if (username != null) {
       router.navigate(["retailer-main"]);
     }

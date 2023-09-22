@@ -1,6 +1,5 @@
 <div class="d-flex flex-column flex-shrink-0 p-3">
     <div>
-        <label>Manufecturear : </label>
         <select class="form-select" name="selected" [(ngModel)]="selected" (change)="onChange()">
             <option>---All Manufacturer---</option>
             <option *ngFor="let manu of manufecturear" >{{manu.manuName}}</option>

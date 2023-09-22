@@ -1,0 +1,164 @@
+<div>
+    <form>
+        <div class="p-5">
+            <h4 class="text-center">Order Details</h4>
+            <hr>
+            <div class="row mb-5">
+                <div class="col-5 text-end">
+                    <h5>Order By</h5>
+                    <hr>
+                    {{retailer.id}} - {{retailer.name}}<br>
+                    {{retailer.catagory}} <br>
+                    {{retailer.email}} <br>
+                    {{retailer.phone}} <br>
+                    {{retailer.strLocation}} <br>
+                    {{retailer.strUpozela}}, {{retailer.strDevision}}, {{retailer.strDistrict}}.
+                </div>
+                <div class="col-2 text-center">
+
+                </div>
+                <div class="col-5 text-start">
+                    <h5>Order To</h5>
+                    <hr>
+                    {{manufecturear.manuId}} - {{manufecturear.manuName}}<br>
+                    {{manufecturear.productType}} <br>
+                    {{manufecturear.website}} <br>
+                    {{manufecturear.email}} <br>
+                    {{manufecturear.coLocation}} <br>
+                    {{manufecturear.coUpozla}}, {{manufecturear.coDistrict}}, {{manufecturear.coDivision}}.
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>SL No.</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let oi of order.orderItems; let i=index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{oi.pName}}</td>
+                        <td>{{oi.pQuantity}}</td>
+                        <td>{{oi.uPrice}}</td>
+                        <td>{{oi.price}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td>{{order.subtotal}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Discount</td>
+                        <td></td>
+                        <td>{{order.discount}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td></td>
+                        <td>{{order.oAmount}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>VAT(15% on Subtotal)</td>
+                        <td></td>
+                        <td>{{order.vat}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Customer's Payable</td>
+                        <td></td>
+                        <td>{{order.netPayable}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="bg-body-tertiary p-5 form-control">
+            <h4 class="">Dalevary Address</h4>
+            <hr>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="shop-name" class="form-label">Store Name:</label>
+                    <input type="text" class="form-control" id="name" name="retailer.name" [(ngModel)]="retailer.name"
+                        placeholder="" required>
+                </div>
+                <div class="col-6">
+                    <label for="owner-name" class="form-label">Owner Name</label>
+                    <input type="text" class="form-control" id="ownerName" name="retailer.ownerName"
+                        [(ngModel)]="retailer.ownerName" placeholder="" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="">
+                        <label for="firstName" class="form-label">Devision</label>
+                        <input type="text" class="form-control" id="firstName" name="order.delDevision"
+                            [(ngModel)]="order.delDevision" placeholder="" value="" required>
+                    </div>
+
+                    <div class="">
+                        <label for="delevary-district" class="form-label">District</label>
+                        <input type="text" class="form-control" id="delDistrict" name="order.delDistrict"
+                            [(ngModel)]="order.delDistrict" placeholder="" value="" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <label for="delevary-upozela" class="form-label">Upozila</label>
+                        <input type="text" class="form-control" id="delUpozela" name="order.delUpozela"
+                            [(ngModel)]="order.delUpozela" required>
+                    </div>
+                    <div class="">
+                        <label for="delLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="delLocation" name="order.delLocation"
+                            [(ngModel)]="order.delLocation" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <label for="email-address" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailAddress" name="emailAddress"
+                            [(ngModel)]="retailer.email" required>
+                    </div>
+                    <div class="">
+                        <label for="phoneNumber" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="retailer.phone"
+                            [(ngModel)]="retailer.phone" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-body-tertiary p-5 form-control">
+            <hr class="my-4">
+            <div class="row mb-3">
+                <div class="col text-end">
+                    <label class="form-lable" for="order-status">Order Status : </label> 
+                    <span> {{order.status}}</span>
+                </div>
+                <div class="col">
+                    <select id="order-status" name="order.status" [(ngModel)]="order.status" class="form-select">
+                        <option>Pending</option>
+                        <option>Processing</option>
+                        <option>Cancel</option>  
+                    </select>
+                </div>
+            </div>
+            <button class="w-100 btn btn-primary btn-lg" (click)="updateOrderInformationById(order)">Update Order</button>
+        </div>
+    </form>
+</div>

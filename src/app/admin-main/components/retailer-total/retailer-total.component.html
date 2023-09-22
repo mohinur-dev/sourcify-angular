@@ -1,0 +1,46 @@
+<div>
+    <h1>Retailer Report</h1>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Sl.No.</td>
+                    <td>Retailer Name</td>
+                    <td>Email</td>
+                    <td>OrderAmount</td>
+                    <td>VAT</td>
+                    <td>Discount</td>
+                    <td>Retailer Paied</td>
+                    <td>Platform Commission</td>
+                    <td>Manufacturer Revenue</td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let tRev of totalRevenue; let i = index">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{tRev.retName}}</td>
+                    <td>{{tRev.retEmail}}</td>
+                    <td>{{tRev.totalOrderAmount}}</td>
+                    <td>{{tRev.totalVAT}}</td>
+                    <td>{{tRev.totalDiscount}}</td>
+                    <td>{{tRev.totalRetPay}}</td>
+                    <td>{{tRev.totalPlatformCom}}</td>
+                    <td>{{tRev.totalManuEarning}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{tOrderAmount}}</td>
+                    <td>{{tVAT}}</td>
+                    <td>{{tDiscount}}</td>
+                    <td>{{tRetailerPay}}</td>
+                    <td>{{tPlatformCommission}}</td>
+                    <td>{{tManufacturerEarning}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

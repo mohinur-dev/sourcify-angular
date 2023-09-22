@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./manufecturear-header.component.css']
 })
 export class ManufecturearHeaderComponent {
+  manuPicture: any = localStorage.getItem('manuPicture');
 
+  onOnInit() {
+    console.log(this.manuPicture);
+
+  }
 }

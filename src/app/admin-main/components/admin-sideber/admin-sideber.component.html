@@ -32,71 +32,70 @@
 
 <body>
     <div class="d-flex flex-column flex-shrink-0 p-3">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img class="bi pe-none me-2" src="../../../../assets/admin/propic01.png" width="100" height="120">
-    
-            <span class="fs-4">Admin</span>
-        </a>
-        <hr>
+        <div class="text-center">
+            <a routerLink="admin-main" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="bi pe-none me-2" src="../../../../assets/admin/{{adminInfo.picture}}" width="100" height="120">
+            </a>
+            <h6 class="mt-2">Admin</h6>
+            <h3><strong>{{adminInfo.name}}</strong></h3>
+            <hr>
+        </div>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="admin-main" class="nav-link link-body-emphasis" aria-current="page">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#home" />
-                    </svg>
+                <a routerLink="admin-home" class="nav-link link-body-emphasis" aria-current="page">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home" /></svg>
                     Home
                 </a>
             </li>
             <li>
                 <a routerLink="admin-manufecturer" class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Manufecturers
                 </a>
             </li>
             <li>
+                <a routerLink="manufacturer-revenue" class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle" /></svg>
+                    ManufacturerReports
+                </a>
+            </li>
+            <li>
                 <a routerLink="admin-retailer" class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#table" />
-                    </svg>
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
                     Retailers
                 </a>
             </li>
             <li>
+                <a routerLink="retailer-total-revenue" class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
+                    RetailerReports
+                </a>
+            </li>
+            <li>
                 <a routerLink="admin-product" class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#grid" />
-                    </svg>
+                    <svg class="bi pe-none me-2" width="16" height="16"> <use xlink:href="#grid" /></svg>
                     Products
                 </a>
             </li>
             <li>
+                <a routerLink="retailer-request" class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"> <use xlink:href="#grid" /></svg>
+                    Product Request
+                </a>
+            </li>
+            <li>
                 <a routerLink="admin-order" class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#people-circle" />
-                    </svg>
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle" /></svg>
                     Orders
                 </a>
             </li>
+            
+            <li>
+                <a routerLink="" (click)="adminSignout()" class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle" /></svg>
+                    Signout
+                </a>
+            </li>
         </ul>
-        <hr>
-        <div class="dropdown">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../../../../assets/manufecturear/incepta/" alt="" width="32" height="32"
-                    class="rounded-circle me-2">
-                <strong>{{username}}</strong>
-            </a>
-            <ul class="dropdown-menu text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" (click)="adminSignout()">Sign out</a></li>
-            </ul>
-        </div>
     </div>
 </body>

@@ -57,4 +57,49 @@
             </div>
         </div>
     </div>
+    <div class="mt-5">
+        <div>
+            <h3>Related Products</h3>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let p of relatedProduct; let i = index">
+                <div class="card">
+                    <img src="{{'../assets/manufecturear/'+ p.pPicture}}" class="card-img-top" alt="...">
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="text-center">{{p.pName}}</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Stock</th>
+                                <td>:</td>
+                                <td>{{p.pStock}}</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>:</td>
+                                <td>{{p.uPrice}}</td>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

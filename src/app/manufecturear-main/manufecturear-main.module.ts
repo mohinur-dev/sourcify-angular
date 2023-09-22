@@ -13,6 +13,9 @@ import { HomeProductsComponent } from './components/products/home-products/home-
 import { UpdateProductsComponent } from './components/products/update-products/update-products.component';
 import { FormsModule } from '@angular/forms';
 import { ManufecturerOrderComponent } from './components/manufecturer-order/manufecturer-order.component';
+import { ManuOrderUpdateComponent } from './components/manu-order-update/manu-order-update.component';
+import { BusinessReportsComponent } from './components/business-reports/business-reports.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 
 @NgModule({
@@ -26,12 +29,17 @@ import { ManufecturerOrderComponent } from './components/manufecturer-order/manu
     HomeProductsComponent,
     UpdateProductsComponent,
     ManufecturerOrderComponent,
+    ManuOrderUpdateComponent,
+    BusinessReportsComponent,
+
   
   ],
   imports: [
     CommonModule,
     ManufecturearMainRoutingModule,
-    RouterModule, FormsModule
+    RouterModule, 
+    FormsModule, 
+    CanvasJSAngularChartsModule
   ]
 })
 export class ManufecturearMainModule { }

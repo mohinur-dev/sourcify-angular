@@ -113,7 +113,8 @@ export class CheckOutComponent {
     }
     order.orderItems = inv;
     this.retailerService.orderPlace(order).subscribe(data => {
-      console.log(data);
+      this.router.navigate(['retailer-main/retailer-order']);
+      this.retailerService.toUpdateCart();
     })
   }
 

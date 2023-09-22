@@ -1,0 +1,35 @@
+<div class="container-fluid p-5">
+    <div>
+        <h1>Request Status</h1>
+        <hr>
+    </div>
+    <div>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Sl.No.</th>
+                    <th>Product Name</th>
+                    <th>Product Generic</th>
+                    <th>Product Quantity</th>
+                    <th>Request Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let rp of requestedProduct; let i = index">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{rp.prName}}</td>
+                    <td>{{rp.prGeneric}}</td>
+                    <td>{{rp.prQuantity}}</td>
+                    <td>{{rp.prStatus}}</td>
+                    <td>
+                        <button class="btn btn-danger">Cancel Request</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</div>

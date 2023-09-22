@@ -13,7 +13,6 @@ export class ManufecturearSigninComponent {
 
   constructor(private router: Router, private manufecturearService: ManufecturearService) {
     let username = localStorage.getItem("username");
-
     if (username != null) {
       router.navigate(["manufecturear-main"]);
     }

@@ -1,7 +1,8 @@
 import { AdminProduct } from './../../classes/admin-product';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { ManufecturearService } from 'src/app/services/manufecturear.service';
 
 @Component({
   selector: 'app-product-update',
@@ -11,7 +12,7 @@ import { AdminService } from 'src/app/services/admin.service';
 export class ProductUpdateComponent {
   adminProduct:AdminProduct = new AdminProduct();
 
-  constructor(private adminService: AdminService, private route:ActivatedRoute) {
+  constructor(private adminService: AdminService, private route:ActivatedRoute, private router:Router, private manufecturearService:ManufecturearService) {
   }
 
   ngOnInit() {
@@ -21,19 +22,11 @@ export class ProductUpdateComponent {
   getProductInformation() {
     let id = this.route.snapshot.params['id'];
     this.adminService.getProductInfoById(id).subscribe((data) => {
-        this.adminProduct.pId = data.pId;
-        this.adminProduct.manuId = data.manuId;
-        this.adminProduct.manuName = data.manuName;
-        this.adminProduct.pName = data.pName;
-        this.adminProduct.pGeneric = data.pGeneric;
-        this.adminProduct.uPrice = data.uPrice;
-        this.adminProduct.pStock = data.pStock;
-        this.adminProduct.pPicture = data.pPicture;
-        this.adminProduct.pDescription = data.pDescription;
-        this.adminProduct.pStatus = data.pStatus; 
+      this.adminProduct = data;
     })
   }
   updateProductInfo(id:any) {
-
+    this.manufecturearService.updateProduct(id).subscribe();
+    this.router.navigate(['admin-main/admin-product']);
   }
 }
